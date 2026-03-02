@@ -1,5 +1,8 @@
 #pragma once
 
+#include <cstdint>
+#include <vector>
+
 #include "nikolaev_d_block_linear_image_filtering_seq/common/include/common.hpp"
 #include "task/include/task.hpp"
 
