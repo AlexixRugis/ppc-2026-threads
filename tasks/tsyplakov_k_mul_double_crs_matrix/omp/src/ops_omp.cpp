@@ -1,9 +1,11 @@
+#include "tsyplakov_k_mul_double_crs_matrix/common/include/common.hpp"
 #include "tsyplakov_k_mul_double_crs_matrix/omp/include/ops_omp.hpp"
 
 #include <omp.h>
 
 #include <cmath>
 #include <unordered_map>
+#include <utility>
 #include <vector>
 
 namespace tsyplakov_k_mul_double_crs_matrix {
@@ -32,7 +34,7 @@ bool TsyplakovKTestTaskOMP::RunImpl() {
   std::vector<std::vector<double>> row_values(rows);
   std::vector<std::vector<int>> row_cols(rows);
 
-#pragma omp parallel for schedule(dynamic)
+#pragma omp parallel for schedule(dynamic) default(none) shared(a, b, row_values, row_cols, rows)
   for (int i = 0; i < rows; ++i) {
     std::unordered_map<int, double> acc;
 
@@ -40,9 +42,9 @@ bool TsyplakovKTestTaskOMP::RunImpl() {
       int k = a.col_index[j];
       double val_a = a.values[j];
 
-      for (int z = b.row_ptr[k]; z < b.row_ptr[k + 1]; ++z) {
-        int j1 = b.col_index[z];
-        acc[j1] += val_a * b.values[z];
+      for (int zz = b.row_ptr[k]; zz < b.row_ptr[k + 1]; ++zz) {
+        int j1 = b.col_index[zz];
+        acc[j1] += val_a * b.values[zz];
       }
     }
 
@@ -60,7 +62,7 @@ bool TsyplakovKTestTaskOMP::RunImpl() {
   SparseMatrixCRS c(a.rows, b.cols);
 
   for (int i = 0; i < c.rows; ++i) {
-    c.row_ptr[i + 1] = c.row_ptr[i] + row_values[i].size();
+    c.row_ptr[i + 1] = c.row_ptr[i] + static_cast<int>(row_values[i].size());
   }
 
   const int nnz = c.row_ptr[c.rows];
