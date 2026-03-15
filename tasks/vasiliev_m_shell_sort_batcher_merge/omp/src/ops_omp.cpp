@@ -115,12 +115,12 @@ void VasilievMShellSortBatcherMergeOMP::CycleMerge(std::vector<ValType> &vec, st
       std::copy(vec.begin() + static_cast<std::ptrdiff_t>(start), vec.begin() + static_cast<std::ptrdiff_t>(end),
                 buffer.begin() + static_cast<std::ptrdiff_t>(start));
     } else {
-      std::vector<ValType> l(vec.begin() + static_cast<std::ptrdiff_t>(start),
-                             vec.begin() + static_cast<std::ptrdiff_t>(middle));
-      std::vector<ValType> r(vec.begin() + static_cast<std::ptrdiff_t>(middle),
-                             vec.begin() + static_cast<std::ptrdiff_t>(end));
+      std::vector<ValType> l_vect(vec.begin() + static_cast<std::ptrdiff_t>(start),
+                                  vec.begin() + static_cast<std::ptrdiff_t>(middle));
+      std::vector<ValType> r_vect(vec.begin() + static_cast<std::ptrdiff_t>(middle),
+                                  vec.begin() + static_cast<std::ptrdiff_t>(end));
 
-      std::vector<ValType> merged = BatcherMerge(l, r);
+      std::vector<ValType> merged = BatcherMerge(l_vect, r_vect);
       for (size_t i = 0; i < merged.size(); i++) {
         buffer[start + i] = merged[i];
       }
