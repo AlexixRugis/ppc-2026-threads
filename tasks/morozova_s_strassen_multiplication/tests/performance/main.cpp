@@ -8,7 +8,6 @@
 #include "util/include/perf_test_util.hpp"
 
 namespace morozova_s_strassen_multiplication {
-
 template <typename TaskType>
 class MorozovaSStrassenMultiplicationPerfTest : public ppc::util::BaseRunPerfTests<InType, OutType> {
   InType input_data_;
@@ -83,6 +82,21 @@ const auto kPerfTestNameOMP = MorozovaSStrassenMultiplicationOMPPerfTest::Custom
 
 INSTANTIATE_TEST_SUITE_P(StrassenMultiplicationOMPPerfTests, MorozovaSStrassenMultiplicationOMPPerfTest,
                          kGtestValuesOMP, kPerfTestNameOMP);
+
+TEST_P(MorozovaSStrassenMultiplicationPerfTest, RunPerfModes) {
+  ExecuteTest(GetParam());
+}
+
+namespace {
+
+const auto kAllPerfTasks = ppc::util::MakeAllPerfTasks<InType, MorozovaSStrassenMultiplicationSEQ>(
+    PPC_SETTINGS_morozova_s_strassen_multiplication);
+
+const auto kGtestValues = ppc::util::TupleToGTestValues(kAllPerfTasks);
+const auto kPerfTestName = MorozovaSStrassenMultiplicationPerfTest::CustomPerfTestName;
+
+INSTANTIATE_TEST_SUITE_P(StrassenMultiplicationPerfTests, MorozovaSStrassenMultiplicationPerfTest, kGtestValues,
+                         kPerfTestName);
 
 }  // namespace
 
