@@ -28,23 +28,27 @@ bool GutyanskyAImgContrastIncrOMP::RunImpl() {
   const size_t sz = GetInput().size();
   uint8_t lower_bound = std::numeric_limits<uint8_t>::max();
   uint8_t upper_bound = std::numeric_limits<uint8_t>::min();
-  
-  #pragma omp parallel for reduction(min: lower_bound) reduction(max: upper_bound)
+
+#pragma omp parallel for reduction(min : lower_bound) reduction(max : upper_bound)
   for (size_t i = 0; i < sz; i++) {
     uint8_t val = GetInput()[i];
-    if (val < lower_bound) lower_bound = val;
-    if (val > upper_bound) upper_bound = val;
+    if (val < lower_bound) {
+      lower_bound = val;
+    }
+    if (val > upper_bound) {
+      upper_bound = val;
+    }
   }
 
   uint8_t delta = upper_bound - lower_bound;
 
   if (delta == 0) {
-    #pragma omp parallel for
+#pragma omp parallel for
     for (size_t i = 0; i < sz; i++) {
       GetOutput()[i] = GetInput()[i];
     }
   } else {
-    #pragma omp parallel for
+#pragma omp parallel for
     for (size_t i = 0; i < sz; i++) {
       auto old_value = static_cast<uint16_t>(GetInput()[i]);
       uint16_t new_value = (std::numeric_limits<uint8_t>::max() * (old_value - lower_bound)) / delta;

@@ -4,8 +4,8 @@
 #include <limits>
 
 #include "gutyansky_a_img_contrast_incr/common/include/common.hpp"
-#include "gutyansky_a_img_contrast_incr/seq/include/ops_seq.hpp"
 #include "gutyansky_a_img_contrast_incr/omp/include/ops_omp.hpp"
+#include "gutyansky_a_img_contrast_incr/seq/include/ops_seq.hpp"
 #include "util/include/perf_test_util.hpp"
 
 namespace gutyansky_a_img_contrast_incr {
@@ -40,7 +40,8 @@ TEST_P(GutyanskyARunPerfTestsImgContrastIncr, RunPerfModes) {
 namespace {
 
 const auto kAllPerfTasks =
-    ppc::util::MakeAllPerfTasks<InType, GutyanskyAImgContrastIncrSEQ, GutyanskyAImgContrastIncrOMP>(PPC_SETTINGS_gutyansky_a_img_contrast_incr);
+    ppc::util::MakeAllPerfTasks<InType, GutyanskyAImgContrastIncrSEQ, GutyanskyAImgContrastIncrOMP>(
+        PPC_SETTINGS_gutyansky_a_img_contrast_incr);
 
 const auto kGtestValues = ppc::util::TupleToGTestValues(kAllPerfTasks);
 
