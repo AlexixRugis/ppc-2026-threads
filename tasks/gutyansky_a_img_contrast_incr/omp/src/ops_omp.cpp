@@ -1,11 +1,12 @@
 #include "gutyansky_a_img_contrast_incr/omp/include/ops_omp.hpp"
 
-#include <atomic>
-#include <numeric>
+#include <algorithm>
+#include <cstddef>
+#include <cstdint>
+#include <limits>
 #include <vector>
 
 #include "gutyansky_a_img_contrast_incr/common/include/common.hpp"
-#include "util/include/util.hpp"
 
 namespace gutyansky_a_img_contrast_incr {
 
@@ -25,35 +26,34 @@ bool GutyanskyAImgContrastIncrOMP::PreProcessingImpl() {
 }
 
 bool GutyanskyAImgContrastIncrOMP::RunImpl() {
-  const size_t sz = GetInput().size();
+  const auto& input = GetInput();
+  auto& output = GetOutput();
+
+  const size_t sz = input.size();
   uint8_t lower_bound = std::numeric_limits<uint8_t>::max();
   uint8_t upper_bound = std::numeric_limits<uint8_t>::min();
 
-#pragma omp parallel for reduction(min : lower_bound) reduction(max : upper_bound)
+#pragma omp parallel for default(none) shared(input, sz) reduction(min : lower_bound) reduction(max : upper_bound)
   for (size_t i = 0; i < sz; i++) {
-    uint8_t val = GetInput()[i];
-    if (val < lower_bound) {
-      lower_bound = val;
-    }
-    if (val > upper_bound) {
-      upper_bound = val;
-    }
+    uint8_t val = input[i];
+    lower_bound = std::min(lower_bound, val);
+    upper_bound = std::max(upper_bound, val);
   }
 
   uint8_t delta = upper_bound - lower_bound;
 
   if (delta == 0) {
-#pragma omp parallel for
+#pragma omp parallel for default(none) shared(input, output, sz)
     for (size_t i = 0; i < sz; i++) {
-      GetOutput()[i] = GetInput()[i];
+      output[i] = input[i];
     }
   } else {
-#pragma omp parallel for
+#pragma omp parallel for default(none) shared(input, output, sz, lower_bound, delta)
     for (size_t i = 0; i < sz; i++) {
-      auto old_value = static_cast<uint16_t>(GetInput()[i]);
+      auto old_value = static_cast<uint16_t>(input[i]);
       uint16_t new_value = (std::numeric_limits<uint8_t>::max() * (old_value - lower_bound)) / delta;
 
-      GetOutput()[i] = static_cast<uint8_t>(new_value);
+      output[i] = static_cast<uint8_t>(new_value);
     }
   }
 
