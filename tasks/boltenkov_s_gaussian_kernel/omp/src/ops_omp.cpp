@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "boltenkov_s_gaussian_kernel/common/include/common.hpp"
+#include "util/src/util.cpp"
 
 namespace boltenkov_s_gaussian_kernel {
 
@@ -47,14 +48,13 @@ bool BoltenkovSGaussianKernelOMP::RunImpl() {
   std::vector<std::vector<int>> tmp_data(n + 2, std::vector<int>(m + 2, 0));
   std::vector<std::vector<int>> &res = GetOutput();
 
-  int num_threads = ppc::util::GetNumThreads();
-
-#pragma omp parallel for num_threads(num_threads) shared(tmp_data, data, n, m)
+#pragma omp parallel for num_threads(ppc::util::GetNumThreads()) default(none) shared(tmp_data, data) firstprivate(n, m)
   for (std::size_t i = 1; i <= n; i++) {
     std::copy(data[i - 1].begin(), data[i - 1].end(), tmp_data[i].begin() + 1);
   }
 
-#pragma omp parallel for num_threads(num_threads) shared(tmp_data, res, kernel_, shift_, n, m)
+#pragma omp parallel for num_threads(ppc::util::GetNumThreads()) default(none) shared(tmp_data, res) \
+    firstprivate(n, m, kernel_, shift_)
   for (std::size_t i = 1; i <= n; i++) {
     for (std::size_t j = 1; j <= m; j++) {
       res[i - 1][j - 1] = (tmp_data[i - 1][j - 1] * kernel_[0][0]) + (tmp_data[i - 1][j] * kernel_[0][1]) +
