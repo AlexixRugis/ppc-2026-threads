@@ -26,8 +26,8 @@ bool GutyanskyAImgContrastIncrOMP::PreProcessingImpl() {
 }
 
 bool GutyanskyAImgContrastIncrOMP::RunImpl() {
-  const auto& input = GetInput();
-  auto& output = GetOutput();
+  const auto &input = GetInput();
+  auto &output = GetOutput();
 
   const size_t sz = input.size();
   uint8_t lower_bound = std::numeric_limits<uint8_t>::max();
