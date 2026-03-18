@@ -45,8 +45,8 @@ namespace {
 
 bool ComputeSlice(const std::function<double(const std::vector<double> &)> &f,
                   const std::vector<std::pair<double, double>> &brd, const std::vector<double> &h,
-                  std::size_t outer_dim, int64_t inner_cells, int num_splits, int outer,
-                  std::vector<int> &idx, std::vector<double> &x, double &local_sum) {
+                  std::size_t outer_dim, int64_t inner_cells, int num_splits, int outer, std::vector<int> &idx,
+                  std::vector<double> &x, double &local_sum) {
   for (std::size_t i = 0; i < outer_dim; ++i) {
     idx[i] = 0;
   }
