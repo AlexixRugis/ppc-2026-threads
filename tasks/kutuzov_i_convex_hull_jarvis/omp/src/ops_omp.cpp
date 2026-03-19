@@ -2,12 +2,11 @@
 
 #include <omp.h>
 
-#include <atomic>
-#include <numeric>
+#include <cmath>
+#include <cstddef>
 #include <vector>
 
 #include "kutuzov_i_convex_hull_jarvis/common/include/common.hpp"
-#include "util/include/util.hpp"
 
 namespace kutuzov_i_convex_hull_jarvis {
 
@@ -27,10 +26,8 @@ double KutuzovITestConvexHullOMP::CrossProduct(double o_x, double o_y, double a_
 
 size_t KutuzovITestConvexHullOMP::FindLeftmostPoint(const InType &input) {
   size_t leftmost = 0;
-  double leftmost_x = std::get<0>(input[leftmost]);
-  double leftmost_y = std::get<1>(input[leftmost]);
 
-#pragma omp parallel
+#pragma omp parallel default(none) shared(input, leftmost)
   {
     size_t local_leftmost = 0;
     double local_leftmost_x = std::get<0>(input[local_leftmost]);
@@ -50,10 +47,11 @@ size_t KutuzovITestConvexHullOMP::FindLeftmostPoint(const InType &input) {
 
 #pragma omp critical
     {
+      double leftmost_x = std::get<0>(input[leftmost]);
+      double leftmost_y = std::get<1>(input[leftmost]);
+
       if ((local_leftmost_x < leftmost_x) || ((local_leftmost_x == leftmost_x) && (local_leftmost_y < leftmost_y))) {
         leftmost = local_leftmost;
-        leftmost_x = local_leftmost_x;
-        leftmost_y = local_leftmost_y;
       }
     }
   }
@@ -106,7 +104,7 @@ bool KutuzovITestConvexHullOMP::RunImpl() {
     double next_x = std::get<0>(GetInput()[next]);
     double next_y = std::get<1>(GetInput()[next]);
 
-#pragma omp parallel
+#pragma omp parallel default(none) shared(current, current_x, current_y, next, next_x, next_y, epsilon)
     {
       size_t local_next = (current + 1) % GetInput().size();
       double local_next_x = std::get<0>(GetInput()[local_next]);
