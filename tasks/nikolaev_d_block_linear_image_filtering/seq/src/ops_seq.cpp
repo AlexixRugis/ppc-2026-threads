@@ -1,4 +1,4 @@
-#include "nikolaev_d_block_linear_image_filtering_seq/seq/include/ops_seq.hpp"
+#include "nikolaev_d_block_linear_image_filtering/seq/include/ops_seq.hpp"
 
 #include <algorithm>
 #include <array>
@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <vector>
 
-#include "nikolaev_d_block_linear_image_filtering_seq/common/include/common.hpp"
+#include "nikolaev_d_block_linear_image_filtering/common/include/common.hpp"
 
 namespace nikolaev_d_block_linear_image_filtering {
 

@@ -8,8 +8,8 @@
 #include <tuple>
 #include <vector>
 
-#include "nikolaev_d_block_linear_image_filtering_seq/common/include/common.hpp"
-#include "nikolaev_d_block_linear_image_filtering_seq/seq/include/ops_seq.hpp"
+#include "nikolaev_d_block_linear_image_filtering/common/include/common.hpp"
+#include "nikolaev_d_block_linear_image_filtering/seq/include/ops_seq.hpp"
 #include "util/include/func_test_util.hpp"
 #include "util/include/util.hpp"
 
@@ -62,7 +62,7 @@ const std::array<TestType, 5> kTestParam = {
                     std::vector<uint8_t>{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, "4x1")};
 
 const auto kTestTasksList = ppc::util::AddFuncTask<NikolaevDBlockLinearImageFilteringSEQ, InType>(
-    kTestParam, PPC_SETTINGS_nikolaev_d_block_linear_image_filtering_seq);
+    kTestParam, PPC_SETTINGS_nikolaev_d_block_linear_image_filtering);
 
 const auto kGtestValues = ppc::util::ExpandToValues(kTestTasksList);
 
