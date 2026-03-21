@@ -47,6 +47,7 @@ class ZagryadskovMRunPerfTestThreads : public ppc::util::BaseRunPerfTests<InType
 
     b.m = dim;
     b.n = dim;
+    b.col_ptr.assign(b.n + 1, 0);
     for (int j = 0; j < b.n; ++j) {
       int left = std::max(j - 50, 0);
       int right = std::min(b.n, j + 50);
