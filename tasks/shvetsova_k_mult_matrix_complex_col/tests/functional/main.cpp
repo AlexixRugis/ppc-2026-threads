@@ -104,7 +104,6 @@ class ShvetsovaKRunFuncTestsThreads : public ppc::util::BaseRunFuncTests<InType,
         b.values = {{0, 1}, {3, 4}, {1, 0}, {0, -1}};
 
         // C = A*B
-        // Вычисляем вручную:
         // C[0,0] = (1+i)*(0+1i) = -1+1i
         // C[1,0] = (2+2i)*(3+4i) = -2+14i
         // C[0,1] = (1+i)*(1+0i) = 1+1i

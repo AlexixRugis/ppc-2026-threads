@@ -13,7 +13,7 @@ class ShvetsovaKRunPerfTestThreads : public ppc::util::BaseRunPerfTests<InType, 
   InType input_data_;
 
   void SetUp() override {
-    const int size = 100;
+    const int size = 1000;
     const int nnz_per_col = 20;
 
     MatrixCCS matrix_a;
