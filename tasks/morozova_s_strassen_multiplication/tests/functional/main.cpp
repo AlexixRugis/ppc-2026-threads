@@ -91,7 +91,7 @@ class MorozovaSStrassenMultiplicationFuncTests : public ppc::util::BaseRunFuncTe
 
   void SetupTest3() {
     input_data_ = {8.0};
-    AddWeightedMatrix(8, [](int i, int j) { return static_cast<double>(i + 1) * (j + 1) * 0.5; });
+    AddWeightedMatrix(8, [](int i, int j) { return static_cast<double>((i + 1) * (j + 1) * 0.5); });
     AddWeightedMatrix(8, [](int i, int j) { return static_cast<double>(i + j + 1) * 0.3; });
   }
 
@@ -129,8 +129,8 @@ class MorozovaSStrassenMultiplicationFuncTests : public ppc::util::BaseRunFuncTe
 
   void SetupTest10() {
     input_data_ = {64.0};
-    AddWeightedMatrix(64, [](int i, int j) { return static_cast<double>(i * 64 + j + 1); });
-    AddWeightedMatrix(64, [](int i, int j) { return static_cast<double>((i + j) * 2 + 1); });
+    AddWeightedMatrix(64, [](int i, int j) { return static_cast<double>((i * 64) + j + 1); });
+    AddWeightedMatrix(64, [](int i, int j) { return static_cast<double>(((i + j) * 2) + 1); });
   }
 
   void SetupDefaultTest() {
