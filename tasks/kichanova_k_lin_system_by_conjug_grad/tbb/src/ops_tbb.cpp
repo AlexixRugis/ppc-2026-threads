@@ -7,30 +7,10 @@
 #include <vector>
 
 #include "kichanova_k_lin_system_by_conjug_grad/common/include/common.hpp"
-#include "oneapi/tbb/parallel_for.h"
 
 namespace kichanova_k_lin_system_by_conjug_grad {
 
 namespace {
-
-struct DotProductResult {
-  double rr;
-  double p_ap;
-};
-
-DotProductResult ComputeBothDotProductsTBB(const std::vector<double> &p, const std::vector<double> &ap,
-                                           const std::vector<double> &r, int n) {
-  return tbb::parallel_reduce(tbb::blocked_range<int>(0, n, 1024), DotProductResult{0.0, 0.0},
-                              [&](const tbb::blocked_range<int> &range, DotProductResult local) {
-    for (int i = range.begin(); i < range.end(); ++i) {
-      local.rr += r[i] * r[i];
-      local.p_ap += p[i] * ap[i];
-    }
-    return local;
-  }, [](const DotProductResult &a, const DotProductResult &b) {
-    return DotProductResult{a.rr + b.rr, a.p_ap + b.p_ap};
-  });
-}
 
 void ComputeMatrixVectorAndUpdateTBB(const std::vector<double> &a, const std::vector<double> &v,
                                      std::vector<double> &result, int n, double alpha, std::vector<double> &x,
@@ -46,16 +26,6 @@ void ComputeMatrixVectorAndUpdateTBB(const std::vector<double> &a, const std::ve
       }
       result[i] = sum;
       x[i] += alpha * p[i];
-    }
-  });
-}
-
-void UpdateResidualAndDirectionTBB(std::vector<double> &r, const std::vector<double> &ap, double alpha,
-                                   std::vector<double> &p, double beta, int n) {
-  tbb::parallel_for(tbb::blocked_range<int>(0, n, 1024), [&](const tbb::blocked_range<int> &range) {
-    for (int i = range.begin(); i < range.end(); ++i) {
-      r[i] -= alpha * ap[i];
-      p[i] = r[i] + beta * p[i];
     }
   });
 }
