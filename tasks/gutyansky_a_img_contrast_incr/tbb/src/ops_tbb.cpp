@@ -3,8 +3,9 @@
 #include <tbb/tbb.h>
 
 #include <cstddef>
-#include <numeric>
-#include <util/include/util.hpp>
+#include <cstdint>
+#include <limits>
+#include <utility>
 
 #include "gutyansky_a_img_contrast_incr/common/include/common.hpp"
 #include "oneapi/tbb/blocked_range.h"
@@ -32,9 +33,9 @@ bool GutyanskyAImgContrastIncrTBB::RunImpl() {
   auto &output = GetOutput();
 
   const size_t sz = input.size();
-  auto [lower_bound, upper_bound] =
-      tbb::parallel_reduce(tbb::blocked_range<size_t>(0, sz), std::make_pair(uint8_t(255), uint8_t(0)),
-                           [&input](const auto &range, auto init) {
+  auto [lower_bound, upper_bound] = tbb::parallel_reduce(
+      tbb::blocked_range<size_t>(0, sz), std::make_pair(static_cast<uint8_t>(255), static_cast<uint8_t>(0)),
+      [&input](const auto &range, auto init) {
     auto [local_min, local_max] = init;
     for (size_t i = range.begin(); i != range.end(); ++i) {
       local_min = std::min(local_min, input[i]);
