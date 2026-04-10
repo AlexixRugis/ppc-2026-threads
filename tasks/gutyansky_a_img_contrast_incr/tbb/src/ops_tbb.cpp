@@ -52,11 +52,10 @@ bool GutyanskyAImgContrastIncrTBB::RunImpl() {
       }
     });
   } else {
-    constexpr uint16_t MAX_UINT8 = std::numeric_limits<uint8_t>::max();
     tbb::parallel_for(tbb::blocked_range<size_t>(0, sz), [&](const auto &range) {
       for (auto idx = range.begin(); idx != range.end(); ++idx) {
         uint16_t old_value = input[idx];
-        uint16_t new_value = (MAX_UINT8 * (old_value - lower_bound)) / delta;
+        uint16_t new_value = (std::numeric_limits<uint8_t>::max(); * (old_value - lower_bound)) / delta;
         output[idx] = static_cast<uint8_t>(new_value);
       }
     });
