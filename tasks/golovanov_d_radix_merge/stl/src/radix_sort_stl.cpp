@@ -129,9 +129,7 @@ void RadixSortSTL::Sort(std::vector<double> &arr) {
   std::vector<std::thread> workers;
   workers.reserve(ranges.size());
   for (std::size_t i = 0; i < ranges.size(); ++i) {
-    workers.emplace_back([&arr, &ranges, i]() {
-      RadixSortSTL::SortRange(arr, ranges[i].first, ranges[i].second);
-    });
+    workers.emplace_back([&arr, &ranges, i]() { RadixSortSTL::SortRange(arr, ranges[i].first, ranges[i].second); });
   }
   for (auto &thread : workers) {
     thread.join();
@@ -150,9 +148,8 @@ void RadixSortSTL::Sort(std::vector<double> &arr) {
     std::vector<std::thread> merge_workers;
     merge_workers.reserve(pair_count);
     for (std::size_t i = 0; i < pair_count; ++i) {
-      merge_workers.emplace_back([&parts, &next, i]() {
-        next[i] = RadixSortSTL::Merge(parts[2 * i], parts[(2 * i) + 1]);
-      });
+      merge_workers.emplace_back(
+          [&parts, &next, i]() { next[i] = RadixSortSTL::Merge(parts[2 * i], parts[(2 * i) + 1]); });
     }
     for (auto &thread : merge_workers) {
       thread.join();
