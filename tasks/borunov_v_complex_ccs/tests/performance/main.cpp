@@ -71,8 +71,9 @@ TEST_P(BorunovVRunPerfTestThreads, RunPerfModes) {
 
 namespace {
 
-const auto kAllPerfTasks = ppc::util::MakeAllPerfTasks<InType, BorunovVComplexCcsOMP, BorunovVComplexCcsSEQ, BorunovVComplexCcsTBB>(
-    PPC_SETTINGS_borunov_v_complex_ccs);
+const auto kAllPerfTasks =
+    ppc::util::MakeAllPerfTasks<InType, BorunovVComplexCcsOMP, BorunovVComplexCcsSEQ, BorunovVComplexCcsTBB>(
+        PPC_SETTINGS_borunov_v_complex_ccs);
 
 const auto kGtestValues = ppc::util::TupleToGTestValues(kAllPerfTasks);
 
