@@ -51,7 +51,7 @@ bool GaseninLDjstraALL::PreProcessingImpl() {
   return true;
 }
 
-void MinPair(void *in, void *inout, int *len, MPI_Datatype * /*dtype*/) {
+static void MinPair(void *in, void *inout, int *len, MPI_Datatype * /*dtype*/) {
   InType *a = static_cast<InType *>(in);
   InType *b = static_cast<InType *>(inout);
   for (int i = 0; i < *len; i += 2) {
