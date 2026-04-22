@@ -8,6 +8,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include <limits>
+#include <utility>
 #include <vector>
 
 #include "gasenin_l_djstra/common/include/common.hpp"
@@ -24,11 +25,6 @@ void MinPairImpl(void *in, void *inout, const int *len, MPI_Datatype * /*dtype*/
       b[i + 1] = a[i + 1];
     }
   }
-}
-
-void MinPairMpi(void *in, void *inout, int *len, MPI_Datatype *dtype) {
-  const int *len_const = len;
-  MinPairImpl(in, inout, len_const, dtype);
 }
 
 void FindThreadLocalMinima(const std::vector<InType> &dist, const std::vector<char> &visited, int local_n, int start_v,
@@ -80,6 +76,7 @@ void UpdateLocalDistances(std::vector<InType> &dist, const std::vector<char> &vi
   }
 }
 
+// Compute local sum of distances (excluding INF)
 int64_t ComputeLocalSum(const std::vector<InType> &dist, int local_n, InType inf) {
   int64_t local_sum = 0;
 #pragma omp parallel for reduction(+ : local_sum) default(none) shared(local_n, dist, inf)
@@ -140,8 +137,12 @@ bool GaseninLDjstraALL::RunImpl() {
   const int local_n = local_n_;
   const int start_v = start_v_;
 
+  auto min_pair_op_func = [](void *in, void *inout, int *len, MPI_Datatype *dtype) {
+    const int *len_const = len;
+    MinPairImpl(in, inout, len_const, dtype);
+  };
   MPI_Op min_pair_op = MPI_OP_NULL;
-  MPI_Op_create(MinPairMpi, 1, &min_pair_op);
+  MPI_Op_create(min_pair_op_func, 1, &min_pair_op);
 
   int num_threads = 1;
 #pragma omp parallel default(none) shared(num_threads)
