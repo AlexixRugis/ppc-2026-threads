@@ -9,7 +9,6 @@
 #include <vector>
 
 #include "gutyansky_a_img_contrast_incr/common/include/common.hpp"
-#include "util/include/util.hpp"
 
 namespace gutyansky_a_img_contrast_incr {
 
