@@ -6,6 +6,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <limits>
+#include <utility>
 #include <vector>
 
 #include "gutyansky_a_img_contrast_incr/common/include/common.hpp"
