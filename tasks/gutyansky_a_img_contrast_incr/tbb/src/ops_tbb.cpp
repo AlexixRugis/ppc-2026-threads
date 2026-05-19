@@ -36,7 +36,7 @@ bool GutyanskyAImgContrastIncrTBB::RunImpl() {
   const size_t sz = input.size();
   const size_t num_threads = static_cast<size_t>(ppc::util::GetNumThreads());
   const size_t chunk_sz = (sz + num_threads - 1) / num_threads;
-  
+
   auto [lower_bound, upper_bound] = tbb::parallel_reduce(
       tbb::blocked_range<size_t>(0, sz, chunk_sz), std::make_pair(static_cast<uint8_t>(255), static_cast<uint8_t>(0)),
       [&input](const auto &range, auto init) {
@@ -58,7 +58,7 @@ bool GutyanskyAImgContrastIncrTBB::RunImpl() {
     });
   } else {
     constexpr uint16_t kMaxUint8 = std::numeric_limits<uint8_t>::max();
-    tbb::parallel_for(tbb::blocked_range<size_t>(0, sz), [&](const auto &range) {
+    tbb::parallel_for(tbb::blocked_range<size_t>(0, sz, chunk_sz), [&](const auto &range) {
       for (auto idx = range.begin(); idx != range.end(); ++idx) {
         uint16_t old_value = input[idx];
         uint16_t new_value = (kMaxUint8 * (old_value - lower_bound)) / delta;
