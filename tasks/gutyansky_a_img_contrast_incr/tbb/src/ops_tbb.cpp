@@ -34,7 +34,7 @@ bool GutyanskyAImgContrastIncrTBB::RunImpl() {
   auto &output = GetOutput();
 
   const size_t sz = input.size();
-  const size_t num_threads = static_cast<size_t>(ppc::util::GetNumThreads());
+  const auto num_threads = static_cast<size_t>(ppc::util::GetNumThreads());
   const size_t chunk_sz = (sz + num_threads - 1) / num_threads;
 
   auto [lower_bound, upper_bound] = tbb::parallel_reduce(
