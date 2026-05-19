@@ -82,12 +82,12 @@ if (delta == 0) {
 - CPU: Intel Core i5-14600KF (14 ядер / 20 потоков)
 - RAM: 64 ГБ DDR5
 - OS: Windows 10
-- Компилятор: MSVC Visual Studio 18 2026
-- Сборка: CMake, -DCMAKE_BUILD_TYPE=Release
+- Компилятор: MSVC Visual Studio 2022
+- Сборка: CMake, --config=Release
 - Команда запуска функциональных тестов:
-    scripts/run_tests.py --running-type=threads --counts 1
+    `.\build\bin\ppc_func_tests.exe --gtest_filter=ImgContrastIncrTests/GutyanskyARunFuncTestsImgContrastIncr.ImgContrastIncr/*`
 - Команда запуска тестов производительности:
-    scripts/run_tests.py --running-type=performance
+    `./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*`
 
 ## 7. Результаты
 
@@ -95,9 +95,9 @@ Baseline (последовательное время) для размера N =
 
 | Размер задачи | Время, мс |
 | ------------- | --------- |
-| 100 000 000   | 245       |
+| 100 000 000   | 825       |
 
-Самый дорогой фрагмент — цикл преобразования (второй проход), который выполняет умножение и деление.
+Это значение будет использовано как точка отчеста для вычисления ускорений в параллельных версиях.
 
 ## 8. Выводы
 
