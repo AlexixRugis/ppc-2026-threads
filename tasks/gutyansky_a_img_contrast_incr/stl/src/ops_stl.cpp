@@ -22,7 +22,7 @@ void WaitAll(std::vector<std::thread> &threads) {
 
 std::pair<uint8_t, uint8_t> ComputeBounds(const std::vector<uint8_t> &input) {
   const size_t sz = input.size();
-  const uint32_t num_threads = static_cast<uint32_t>(ppc::util::GetNumThreads());
+  const auto num_threads = static_cast<size_t>(ppc::util::GetNumThreads());
   const size_t chunk_sz = (sz + num_threads - 1) / num_threads;
 
   std::vector<std::thread> threads;
@@ -62,7 +62,7 @@ std::pair<uint8_t, uint8_t> ComputeBounds(const std::vector<uint8_t> &input) {
 
 void CopyMultiThread(const std::vector<uint8_t> &input, std::vector<uint8_t> &output) {
   const size_t sz = input.size();
-  const auto num_threads = std::max(1U, std::thread::hardware_concurrency());
+  const auto num_threads = static_cast<size_t>(ppc::util::GetNumThreads());
   const size_t chunk_sz = (sz + num_threads - 1) / num_threads;
 
   std::vector<std::thread> threads;
@@ -85,7 +85,7 @@ void CopyMultiThread(const std::vector<uint8_t> &input, std::vector<uint8_t> &ou
 void TransformMultiThread(const std::vector<uint8_t> &input, std::vector<uint8_t> &output, uint8_t lower_bound,
                           uint8_t delta) {
   const size_t sz = input.size();
-  const uint32_t num_threads = std::max(1U, std::thread::hardware_concurrency());
+  const auto num_threads = static_cast<size_t>(ppc::util::GetNumThreads());
   const size_t chunk_sz = (sz + num_threads - 1) / num_threads;
 
   std::vector<std::thread> threads;
