@@ -141,7 +141,7 @@ TBB дает сопоставимое с OpenMP ускорение, однако
 
 ## 9. Источники
 
-- Документация курса «Параллельное программирование» - URL: https://learning-process.github.io/parallel_programming_slides/.
-- Microsoft MPI : документация [Электронный ресурс] // Microsoft Learn. – URL: https://learn.microsoft.com/ru-ru/message-passing-interface/microsoft-mpi.
-- oneTBB Documentation - URL: https://uxlfoundation.github.io/oneTBB/
-- std::thread - cppreference.com - URL: https://en.cppreference.com/cpp/thread/thread
+- Документация курса «Параллельное программирование» - URL: <https://learning-process.github.io/parallel_programming_slides/>.
+- Microsoft MPI : документация [Электронный ресурс] // Microsoft Learn. – URL: <https://learn.microsoft.com/ru-ru/message-passing-interface/microsoft-mpi>.
+- oneTBB Documentation - URL: <https://uxlfoundation.github.io/oneTBB/>
+- std::thread - cppreference.com - URL: <https://en.cppreference.com/cpp/thread/thread>

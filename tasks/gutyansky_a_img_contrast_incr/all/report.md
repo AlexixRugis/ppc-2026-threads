@@ -76,7 +76,7 @@ MPI_Allgatherv(local_data.data(), local_count, MPI_UINT8_T, GetOutput().data(), 
 
 Команда запуска:
 
-```
+```powershell
 $env:PPC_NUM_PROC=<кол-во процессов>
 $env:PPC_NUM_THREADS=<кол-во потоков>
 $env:OMP_NUM_THREADS=<кол-во потоков>
