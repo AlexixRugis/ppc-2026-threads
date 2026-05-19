@@ -9,6 +9,7 @@
 #include <vector>
 
 #include "gutyansky_a_img_contrast_incr/common/include/common.hpp"
+#include "util/include/util.hpp"
 
 namespace gutyansky_a_img_contrast_incr {
 
@@ -21,7 +22,7 @@ void WaitAll(std::vector<std::thread> &threads) {
 
 std::pair<uint8_t, uint8_t> ComputeBounds(const std::vector<uint8_t> &input) {
   const size_t sz = input.size();
-  const uint32_t num_threads = std::max(1U, std::thread::hardware_concurrency());
+  const uint32_t num_threads = static_cast<uint32_t>(ppc::util::GetNumThreads());
   const size_t chunk_sz = (sz + num_threads - 1) / num_threads;
 
   std::vector<std::thread> threads;

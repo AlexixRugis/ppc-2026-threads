@@ -10,6 +10,7 @@
 #include "gutyansky_a_img_contrast_incr/common/include/common.hpp"
 #include "oneapi/tbb/blocked_range.h"
 #include "oneapi/tbb/parallel_for.h"
+#include "util/include/util.hpp"
 
 namespace gutyansky_a_img_contrast_incr {
 
@@ -33,8 +34,11 @@ bool GutyanskyAImgContrastIncrTBB::RunImpl() {
   auto &output = GetOutput();
 
   const size_t sz = input.size();
+  const size_t num_threads = static_cast<size_t>(ppc::util::GetNumThreads());
+  const size_t chunk_sz = (sz + num_threads - 1) / num_threads;
+  
   auto [lower_bound, upper_bound] = tbb::parallel_reduce(
-      tbb::blocked_range<size_t>(0, sz), std::make_pair(static_cast<uint8_t>(255), static_cast<uint8_t>(0)),
+      tbb::blocked_range<size_t>(0, sz, chunk_sz), std::make_pair(static_cast<uint8_t>(255), static_cast<uint8_t>(0)),
       [&input](const auto &range, auto init) {
     auto [local_min, local_max] = init;
     for (size_t i = range.begin(); i != range.end(); ++i) {
@@ -47,7 +51,7 @@ bool GutyanskyAImgContrastIncrTBB::RunImpl() {
   uint8_t delta = upper_bound - lower_bound;
 
   if (delta == 0) {
-    tbb::parallel_for(tbb::blocked_range<size_t>(0, sz), [&](const auto &range) {
+    tbb::parallel_for(tbb::blocked_range<size_t>(0, sz, chunk_sz), [&](const auto &range) {
       for (auto idx = range.begin(); idx != range.end(); ++idx) {
         output[idx] = input[idx];
       }

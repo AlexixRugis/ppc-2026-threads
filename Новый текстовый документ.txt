@@ -1,0 +1,429 @@
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:OMP_NUM_THREADS=1
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_THREADS=1
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> ./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+Note: Google Test filter = RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:pipeline:-902564379.7486406565
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled (704 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:task_run:-499.8975560424
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled (825 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:pipeline:0.1796750400
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled (990 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:task_run:0.1732968800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled (1149 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:pipeline:739.7261779200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled (928 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:task_run:0.1637302482
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled (1092 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:pipeline:240.0594532736
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled (439 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:task_run:0.0688923082
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled (525 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:pipeline:0.2080155400
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled (1135 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:task_run:0.2039598200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled (1341 ms)
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr (9137 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (9138 ms total)
+[  PASSED  ] 10 tests.
+
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:OMP_NUM_THREADS=2
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_THREADS=2
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> ./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+Note: Google Test filter = RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:pipeline:-902564374.7900880575
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled (702 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:task_run:-312.8318482040
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled (824 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:pipeline:0.0924623200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled (556 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:task_run:0.0881174200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled (636 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:pipeline:744.4151660600
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled (524 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:task_run:0.0830110682
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled (606 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:pipeline:431.6891797616
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled (304 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:task_run:0.0394406082
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled (342 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:pipeline:0.1208280200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled (697 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:task_run:0.1169423800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled (814 ms)
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr (6015 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (6017 ms total)
+[  PASSED  ] 10 tests.
+
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:OMP_NUM_THREADS=4
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_THREADS=4
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> ./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+Note: Google Test filter = RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:pipeline:-902753260.7300497293
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled (700 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:task_run:-491.7126358984
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled (826 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:pipeline:0.0485713000
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled (333 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:task_run:0.0445778200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled (375 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:pipeline:752.9973949400
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled (320 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:task_run:0.0432454482
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled (367 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:pipeline:261.3308199856
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled (244 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:task_run:0.0283524282
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled (275 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:pipeline:0.0777944200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled (483 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:task_run:0.0765315000
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled (567 ms)
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr (4501 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (4502 ms total)
+[  PASSED  ] 10 tests.
+
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:OMP_NUM_THREADS=6
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_THREADS=6
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> ./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+Note: Google Test filter = RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:pipeline:-902564361.3661804199
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled (701 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:task_run:-390.4451929800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled (825 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:pipeline:0.0339289200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled (262 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:task_run:0.0313705200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled (295 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:pipeline:757.6605174800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled (266 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:task_run:0.0315313082
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled (297 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:pipeline:367.2442280080
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled (230 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:task_run:0.0239927482
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled (256 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:pipeline:0.0643361600
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled (415 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:task_run:0.0667595400
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled (505 ms)
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr (4061 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (4062 ms total)
+[  PASSED  ] 10 tests.
+
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:OMP_NUM_THREADS=12
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_THREADS=12
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> ./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+Note: Google Test filter = RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:pipeline:-902230320.4834076166
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled (704 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:task_run:-484.8565128040
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled (827 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:pipeline:0.0267848200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled (227 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:task_run:0.0264304600
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled (262 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:pipeline:762.5714382600
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled (216 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:task_run:0.0196795682
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled (226 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:pipeline:277.7309134272
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled (231 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:task_run:0.0216552882
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled (235 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:pipeline:0.0597940200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled (393 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:task_run:0.0543770800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled (439 ms)
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr (3769 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (3770 ms total)
+[  PASSED  ] 10 tests.
+
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:OMP_NUM_THREADS=2
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_THREADS=2
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_PROC=1
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> mpiexec -n 1 ./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+Note: Google Test filter = RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:pipeline:-902753197.1666591167
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled (701 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:task_run:-418.2979700576
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled (822 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:pipeline:0.0907800400
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled (548 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:task_run:0.0864131600
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled (626 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:pipeline:816.6918010600
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled (518 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:task_run:0.0834794482
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled (608 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:pipeline:398.5001100256
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled (303 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:task_run:0.0414724482
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled (354 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:pipeline:0.1223926400
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled (705 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:task_run:0.1187786800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled (819 ms)
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr (6008 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (6008 ms total)
+[  PASSED  ] 10 tests.
+
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_PROC=2
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> mpiexec -n 2 ./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+Note: Google Test filter = RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:pipeline:-902230260.3110358715
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled (705 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:task_run:-525.6975253088
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled (831 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:pipeline:0.0901678800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled (555 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:task_run:0.0880123600
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled (637 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:pipeline:822.9507256800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled (531 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:task_run:0.0832813882
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled (615 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:pipeline:297.3648076456
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled (334 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:task_run:0.0444162682
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled (388 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:pipeline:0.0756632800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled (474 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:task_run:0.0734646800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled (554 ms)
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr (5656 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (5656 ms total)
+[  PASSED  ] 10 tests.
+
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_PROC=4
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> mpiexec -n 4 ./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+Note: Google Test filter = RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:pipeline:-901329534.3119529486
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled (724 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:task_run:-499.3841826752
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled (858 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:pipeline:0.1103448800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled (662 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:task_run:0.1015921000
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled (730 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:pipeline:829.0756579200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled (562 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:task_run:0.0938390682
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled (684 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:pipeline:329.4406850864
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled (459 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:task_run:0.0650679082
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled (522 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:pipeline:0.0625613200
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled (429 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:task_run:0.0600841000
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled (496 ms)
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr (6271 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (6271 ms total)
+[  PASSED  ] 10 tests.
+
+
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_PROC=8
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> mpiexec -n 8 ./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+Note: Google Test filter = RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:pipeline:-902564283.7295858860
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled (775 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:task_run:-296.0065288984
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled (914 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:pipeline:0.1302673600
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled (789 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:task_run:0.1305133600
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled (948 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:pipeline:835.7617141000
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled (778 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:task_run:0.1357809082
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled (991 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:pipeline:540.0454756752
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled (765 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:task_run:0.1267651882
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled (864 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:pipeline:0.0631150800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled (497 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:task_run:0.0571069800
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled (592 ms)
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr (8626 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (8626 ms total)
+[  PASSED  ] 10 tests.
+
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_PROC=1
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:PPC_NUM_THREADS=16
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> $env:OMP_NUM_THREADS=16
+PS C:\Users\alexi\Documents\GitHub_Repos\ppc-2026-threads> ./build/bin/ppc_perf_tests --gtest_filter=RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+Note: Google Test filter = RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/*
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:pipeline:-902230238.4879566431
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_seq_enabled (702 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled
+gutyansky_a_img_contrast_incr_seq_enabled:task_run:-530.7782499936
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_seq_enabled (830 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:pipeline:0.0263596400
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_omp_enabled (225 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled
+gutyansky_a_img_contrast_incr_omp_enabled:task_run:0.0223953400
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_omp_enabled (242 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:pipeline:844.5620372600
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_tbb_enabled (205 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled
+gutyansky_a_img_contrast_incr_tbb_enabled:task_run:0.0186422282
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_tbb_enabled (220 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:pipeline:313.4156419208
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_stl_enabled (217 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled
+gutyansky_a_img_contrast_incr_stl_enabled:task_run:0.0230655082
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_stl_enabled (243 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:pipeline:0.0551759400
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/pipeline_gutyansky_a_img_contrast_incr_all_enabled (370 ms)
+[ RUN      ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled
+gutyansky_a_img_contrast_incr_all_enabled:task_run:0.0527231400
+[       OK ] RunModeTests/GutyanskyARunPerfTestsImgContrastIncr.RunPerfModes/task_run_gutyansky_a_img_contrast_incr_all_enabled (429 ms)
+[----------] 10 tests from RunModeTests/GutyanskyARunPerfTestsImgContrastIncr (3692 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (3693 ms total)
+[  PASSED  ] 10 tests.
